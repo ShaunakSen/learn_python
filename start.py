@@ -17,13 +17,15 @@ for f in foods[:2]:
 for x in range(5, 12):
     print(x)
 
-
 # 3rd argument specifies the increment
 for x in range(5, 40, 5):
     print(x)
 
+
 def mini():
     print("Running function in python")
+
+
 mini()
 
 def getGender(sex="unknown"):
@@ -32,6 +34,7 @@ def getGender(sex="unknown"):
     elif sex is 'f':
         sex = "Female"
     print(sex)
+
 
 getGender('m')
 getGender()
