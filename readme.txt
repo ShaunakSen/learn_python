@@ -90,3 +90,23 @@ Cool functionalities u can use
 import module_name
 To download a module:
 settings->project interpreter->+
+
+
+Reading and Writing from files
+
+fw = open('mini.txt', 'w')
+fw.write('mini is awesome\nsorry..super awesome\n')
+fw.close()
+
+fr = open('mini.txt', 'r')
+data = fr.read()
+print(data)
+fr.close()
+
+
+Downloading files from web
+
+We want to download a csv file
+this file : http://real-chart.finance.yahoo.com/table.csv?s=GOOG&d=4&e=29&f=2016&g=d&a=7&b=19&c=2004&ignore=.csv
+
+
