@@ -74,3 +74,19 @@ healthCalculator(data[0], data[1], data[2])
 healthCalculator(*data)
 
 Gives same result. It unpacks arguments from list and passes them into function
+
+
+Sets
+
+A collection of items but cant have any duplicates like lists can
+
+Dictionaries
+
+They are key-value pairs
+
+Modules
+
+Cool functionalities u can use
+import module_name
+To download a module:
+settings->project interpreter->+
