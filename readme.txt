@@ -109,4 +109,22 @@ Downloading files from web
 We want to download a csv file
 this file : http://real-chart.finance.yahoo.com/table.csv?s=GOOG&d=4&e=29&f=2016&g=d&a=7&b=19&c=2004&ignore=.csv
 
+read start5.py
+
+
+Make A Web Crawler!!
+
+Install beautifulsoup4 package
+it can go through all the website data. it can do cool stuff like getting the links and all
+
+see script6.py
+
+now this crawler can crawl a site give info about links
+
+we want a crawler to crawl a site gather links visit the sites in the links and recursively keep doing that
+
+see script6.py
+
+
+
 

@@ -16,7 +16,7 @@ def download_stock_data(csv_url):
     csv_str = str(csv)
 
     # this data is now in a single long long string
-    lines = csv_str.split("\\n")
+    lines = csv_str.split(r"\n")
     dest_url = r'goog.csv'
     # r means raw it will accept paths like 'C:\shaunak\....'
     fx = open(dest_url, 'w')
