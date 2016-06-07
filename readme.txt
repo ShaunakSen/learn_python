@@ -184,6 +184,90 @@ Init - gets called automatically when object is created
 It is called first
 Like a constructor
 
+Class Var vs Instance Var
+
+class Girl:
+    gender = 'female'
+    def __init__(self, name):
+        self.name = name
+
+
+mini = Girl('mini')
+mini2 = Girl('budhhu mini')
+print(mini.gender)
+print(mini2.gender)
+print(mini.name)
+print(mini2.name)
+
+The var gender is a class var
+name is instance var
+class var is same for all objects
+Instance var is different for each object
+
+INHERITANCE
+
+class Parent:
+
+    def print_last_name(self):
+        print('Sen')
+
+
+class Child(Parent):
+
+    def print_first_name(self):
+        print('Shaunak')
+
+
+shaunak = Child()
+
+shaunak.print_first_name()
+shaunak.print_last_name()
+
+
+
+Overriding a function
+
+class Parent:
+
+    def print_last_name(self):
+        print('Sen')
+
+
+class Child(Parent):
+
+    def print_first_name(self):
+        print('Shaunak')
+    def print_last_name(self):
+        print('blaaah blaaah')
+
+
+shaunak = Child()
+
+shaunak.print_first_name()
+shaunak.print_last_name()
+
+
+Multiple Inheritance
+
+
+class Mario():
+    def move(self):
+        print('Mario Moving....')
+
+
+class Shroom():
+    def eat_shroom(self):
+        print('Mario is BIG !!')
+
+
+class BigMario(Mario, Shroom):
+    pass
+
+mini = BigMario()
+mini.move()
+mini.eat_shroom()
+
+
 
 
 
