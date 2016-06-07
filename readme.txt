@@ -125,6 +125,67 @@ we want a crawler to crawl a site gather links visit the sites in the links and 
 
 see script6.py
 
+Exception Handling
+
+tuna = input('Whats your fav no \n')
+print(tuna)
+
+if user enters string error occurs
+
+This is not syntax error.. this is exception.. It is called ValueError
+
+ValueError occurs when user types something which cant be converted to int
+
+while True:
+    try:
+        number =  int(input('Enter fav no: \n'))
+        print(10/number)
+        break
+    except ValueError:
+        print('Make sure u enter a no \n')
+
+    except ZeroDivisionError:
+        print('Dont pick 0 \n')
+
+    except:
+        break
+
+    finally:
+        print('Executes no matter what \n')
+
+
+CLASSES AND OBJECTS
+
+class Enemy:
+    life = 3
+
+    def attack(self):
+        print('Ouch !')
+        self.life -= 1
+
+    def checkLife(self):
+        if self.life <= 0:
+            print("I am dead")
+        else:
+            print(str(self.life) + " life left")
+
+enemy1 = Enemy()
+enemy1.attack()
+enemy1.checkLife()
+
+enemy2 = Enemy()
+enemy2.attack()
+enemy2.checkLife()
+
+Here to access class vars inside class functions we have to use self
+
+
+Init - gets called automatically when object is created
+It is called first
+Like a constructor
+
+
+
 
 
 
