@@ -267,6 +267,70 @@ mini = BigMario()
 mini.move()
 mini.eat_shroom()
 
+Word Counter
+
+Crawl a web page .. get all words and show how frequently a word is used
+
+
+First we get each word from titles in https://thenewboston.com/forum/recent_activity.php
+
+import requests
+from bs4 import BeautifulSoup
+import operator
+
+
+def start(url):
+    wordList = []
+    source_code = requests.get(url).text
+    soup = BeautifulSoup(source_code)
+    for post_text in soup.findAll('a', {'class':'title'}):
+        content = post_text.string
+        words = content.lower().split()
+        for each_word in words:
+            print(each_word)
+            wordList.append(each_word)
+
+
+start('https://thenewboston.com/forum/recent_activity.php')
+
+Now here there may be words like questions... or :) or some other strange symbols we dont need
+we need to clean that up
+
+def clean_up_list(wordlist):
+    cleanWordList = []
+    for word in wordlist:
+        symbols = "!@#$%^&*()_\"+<>-.,?/:;{}[]|"
+        for i in range(0, len(symbols)):
+            word = word.replace(symbols[i], "")
+        if len(word) > 0:
+            print(word)
+            cleanWordList.append(word)
+
+
+
+Now we have to create a dictionary to store how often these words appear
+
+Note we imported operator.. this allows us to work with built in data types in python
+
+
+def create_dictionary(cleanWordList):
+    word_count = {}
+    for word in cleanWordList:
+        if word in word_count:
+            word_count[word] += 1
+        else:
+            word_count[word] = 1
+    # sort dictionary
+
+    for key, value in sorted(word_count.items(), key=operator.itemgetter(1)):
+        print(key, value)
+
+
+    Now dictionary is comprised of key and value
+
+    itemgetter(1) means sort by value
+    itemgetter(0) means sort by key
+
 
 
 
