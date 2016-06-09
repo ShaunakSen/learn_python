@@ -27,6 +27,7 @@ def clean_up_list(wordlist):
 
     create_dictionary(cleanWordList)
 
+
 def create_dictionary(cleanWordList):
     word_count = {}
     for word in cleanWordList:

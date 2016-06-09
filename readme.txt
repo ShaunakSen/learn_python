@@ -333,6 +333,108 @@ def create_dictionary(cleanWordList):
 
 
 
+Unpacking Lists
+
+items = ['November 16, 2015', 'Clothes for Mini', 2000]
+
+We want to separate the individual values in the list into variables
+
+
+data1 = item[0]
+data2 = item[1]
+data3 = item[2]
+
+But can we do it in one single line?
+
+date, item, price = items
+print(item)
+
+
+Rule: make sure that no of vars = no of args n list
+
+Now here we have to kno how many elements are in list
+
+For example we have some lists of grades
+They are all of variable length. We want to drop 1st and last grade and average all in between
+
+first, *middle, last = grades
+
+first will be grades[0] last will be last element
+
+middle will be another list comprising the elements  in between
+
+def drop_first_last(grades):
+    first, *middle, last = grades
+    average = sum(middle) / len(middle)
+    print(average)
+
+
+drop_first_last([65, 76, 98, 65, 21])
+drop_first_last([65, 76, 100, 23, 98, 65, 21])
+
+
+ZIP function
+
+We have 2 lists of equal no if items and we will zip them together
+
+
+print("Zipping Example")
+
+first = ['mini', 'shona', 'pappi']
+last = ['sen', 'sen', 'sarkar']
+
+full_name = zip(first, last)
+
+for name in full_name:
+    print(name)
+
+for fname, title in full_name:
+    print(fname, title)
+
+When we zip,
+
+full_name = [('mini', 'sen'),('shona', 'sen'),('pappi', 'sarkar')]
+
+LAMBDA
+
+lambda is a small function which has no name
+
+lamdba input: expression
+
+answer = lambda x: x*7
+print(answer(5))
+
+When to use this?
+Button(text="Click Me", command=lamdba:custom)
+
+We dont wand to allocate separate function
+Its something that happens once only
+Like anonymous function in js
+
+Get Min , Max of dictionary and sort dictionary
+
+stocks = {
+    'GOOG': 520.54,
+    'FB': 76.45,
+    'YHOO': 39.28,
+    'AMZN': 306.21,
+    'APPL': 99.76
+}
+
+stocks_list = zip(stocks.values(), stocks.keys())
+minimumValue = min(stocks_list)
+print(minimumValue)
+
+print(sorted(zip(stocks.values(), stocks.keys())))
+
+
+first we consider dictionary into a joined list using zip
+Then we use min and sorted methods
+
+
+
+
+
 
 
 
