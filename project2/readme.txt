@@ -139,8 +139,135 @@ FILES
     fhand.close()
 
 
+LISTS
+
+    A list is a collection
+    A list element can be any Python object - even another list
+
+    Strings are immutable.. we cant change contents of string
+    string = 'mini'
+    stringg[0] = 'M'
+    ERROR!
 
 
+    Lists are mutable
+    list = [1, 2, 'mini', [12, 13]]
+    list[0] = 13
+    print(list)
+
+    o/p:   [13, 2, 'mini', [12, 13]]
+
+    len(list)..gets length
+
+    Range: it generates a list
+    range([start], stop[, step])
+    list2 = range(5)
+    print(list2)
+    [0, 1, 2, 3, 4]
+    The range function creates a sequential list of numbers.
+    The code below generates a list containing all of the integers, up to 10.
+    numbers = list(range(10))
+    print (numbers)
+    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    for i in range(5):
+      print("hello!")
+    You don't need to call list on the range object when it is used in a for loop,
+    because it isn't being indexed, so a list isn't required.
+
+    The call to list is necessary because range by itself creates a range object,
+    and this must be converted to a list if you want to use it as one.
+
+    friends = ['mini', 'paddy', 'pappi', 'saurav']
+    for i in range(len(friends)):
+        print("Here's wishing friend no: ", i)
+        print("Happy B'day ", friends[i])
+
+    Concatenate lists by +
+    But this is temporary
+    to affect permanently u can use append
+    slicing:same as strings
+
+    print('mini' in list) -> True
+    print('mini' not in list) -> False
+    sort()
+    max()
+    min()
+    sum()
+    insert(index,element)
+    index(element) -> returns index of the first occurrence that particular element.
+    If the item isn't in the list, it raises a ValueError.
+
+    list.count(obj): Returns a count of how many times an item occurs in a list
+    list.remove(obj): Removes an object from a list
+    list.reverse(): Reverses objects in a list
+
+    words = ["Python", "fun"]
+    index = 1
+    words.insert(index, "is")
+    print(words)
+
+    listOfNums = []
+    while True:
+        inp = input("Enter a no: ")
+        if inp == 'done':
+            break
+        inp = float(inp)
+        listOfNums.append(inp)
+
+    average = sum(listOfNums)/len(listOfNums)
+    print(average)
 
 
+    Note: float(inp)
 
+    This is bcoz input always returns a STRING!!
+    _________________________________________________________
+
+
+    Now we could have written a simpler program for the above
+    take vars count and sum..keep adding
+    and do ave later
+    not even though this would be having greater no of lines of code it will take up less memory
+
+    STRINGS AND LISTS
+
+    string = 'Shona Loves Mini Forever'
+    list3 = string.split()
+    print(list3)
+    ['Shona', 'Loves', 'Mini', 'Forever']
+    split() looks at many spaces as 1 single space
+    hobbies = 'first;second;third'
+    hobbies.split(';')
+
+
+FUNCTIONS
+
+    Any statement that consists of a word followed by information in parentheses is a function call
+    Technically, parameters are the variables in a function definition,
+    and arguments are the values put into parameters when functions are called.
+
+    Like in javaScript functions can be assigned to variables
+
+    def multiply(x, y):
+      return x * y
+
+    a = 4
+    b = 7
+    operation = multiply
+    print(operation(a, b))
+
+    Functions can also be used as Arguments to other functions
+
+    def add(x, y):
+        return x + y
+
+    def do_twice(func, x, y):
+      return func(func(x, y), func(x, y))
+
+    a = 5
+    b = 10
+
+    print(do_twice(add, a, b))
+
+
+    So we can use or call any function inside another
