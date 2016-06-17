@@ -271,3 +271,83 @@ FUNCTIONS
 
 
     So we can use or call any function inside another
+
+DICTIONARIES
+
+    A dictionary is like an associative array in PHP
+
+    bag = dict()
+    bag['chocolates'] = 10
+    bag['money'] = 100
+    bag['cards'] = 5
+    print(bag['cards'])
+    bag['cards'] += 2
+    print(bag)
+
+    5
+    {'cards': 7, 'chocolates': 10, 'money': 100}
+
+    mini = {'age': 21, 'loves': 'shona', 'likes':
+    {
+        'food': 'chocolates',
+        'clothes': 'red dress'
+    }}
+    print(mini)
+
+    {'loves': 'shona', 'likes': {'food': 'chocolates', 'clothes': 'red dress'}, 'age': 21}
+
+    Notice that the order in which u declare a dict in ur code may not be same order printed out
+    This is bcoz internally, unlike in lists dicts are not stored in ordered form
+
+    key in dict: true or false
+
+    print('age' in mini)
+    True
+
+    if 'age' in mini:
+        print(mini['age'])
+    else:
+        print(0)
+
+    For this python has a built in method called get
+
+    mini.get('age',0)
+
+    0 signifies what value to return if that key is not found
+
+    program to take in a list and count no of occurrences and put it in dict:
+
+    counts = dict()
+    list = ['mini', 'shona', 'drigger', 'mini', 'shona', 'dronzer', 'drigger', 'mini']
+    for name in list:
+        counts[name] = counts.get(name, 0) + 1
+    print(counts)
+
+    {'shona': 2, 'dronzer': 1, 'mini': 3, 'drigger': 2}
+
+    For loops :
+    for item in counts:
+        print(item, counts[item])
+
+    bag.keys() -> dict_keys(['chocolates', 'money', 'cards'])
+    bag.values() -> dict_values([100, 7, 10])
+
+    Note.. we cant predict order of either keys() or values() methods
+    BUT these two WILL come out in SYNC AS LONG AS WE don no change dictionary between
+    calling these 2 methods
+
+    bag.items() -> dict_items([('chocolates', 10), ('cards', 7), ('money', 100)])
+
+    for a,b in bag.items():
+        print(a, b)
+
+    chocolates 10
+    cards 7
+    money 100
+
+
+
+
+
+
+
