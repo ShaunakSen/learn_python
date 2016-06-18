@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c329ca3d-de82-42f1-b965-df755a95fc8d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project2/actual.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project2/assgn7.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project2/sample.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project2/regexp.py" afterPath="$PROJECT_DIR$/project2/regexp.py" />
     </list>
     <ignored path="learn_python.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -592,7 +588,14 @@
       <option name="project" value="LOCAL" />
       <updated>1466278548194</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="completed needle in haystack assignment">
+      <created>1466280249693</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1466280249693</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -644,7 +647,8 @@
     <MESSAGE value="understood Tuples :)" />
     <MESSAGE value="completed data structures :D" />
     <MESSAGE value="Understood regular expressions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Understood regular expressions" />
+    <MESSAGE value="completed needle in haystack assignment" />
+    <option name="LAST_COMMIT_MESSAGE" value="completed needle in haystack assignment" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
