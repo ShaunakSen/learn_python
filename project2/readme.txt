@@ -468,6 +468,169 @@ TUPLES
 
 
 
+REGULAR EXPRESSIONS
+
+
+    It is a programming language that specializes in string matching
+    It is a language of characters, not tokens
+    It was developed in 70s
+    It is a mark of awesomeness!
+
+    ^	Matches the beginning of a line
+    $	Matches the end of the line
+    .	Matches any character
+    \s	Matches whitespace
+    \S	Matches any non-whitespace character
+    *	Repeats a character zero or more times
+    *?	Repeats a character zero or more times (non-greedy)
+    +	Repeats a character one or more times
+    +?	Repeats a character one or more times (non-greedy)
+    [aeiou]	Matches a single character in the listed set
+    [^XYZ]	Matches a single character not in the listed set
+    [a-z0-9]	The set of characters can include a range
+    (	Indicates where string extraction is to start
+    )	Indicates where string extraction is to end
+
+
+    import re
+    re.search(reg_expr, string_to_search_from)
+    returns True or False
+
+    import re
+    fname = 'mbox-short.txt'
+    fh = open(fname)
+    for line in fh:
+        line = line.rstrip()
+        if re.search('From: ', line):
+            print(line)
+
+    This prints out all lines which CONTAIN 'From: '
+
+    To prints out all lines which START WITH 'From: '
+
+    ^X.*:
+    Lines starting with X then any char any no of times then :
+    Now modify it st : is last char
+    ^X.*:$
+
+    X-Sieve: ok
+    X-kjhdk: ok
+    X-Plane is behind schedule: ok
+
+    We want to not allow 3rd one ie with blank spaces
+
+    ^X-\S+:
+    Starting with X- then one or more non blank chars and :
+    3rd case we get X- but we get ' ' before : so does not select that
+
+    If we want matching strings to be extracted, we use re.findall()..
+    It finds all and puts in a list
+
+    [0-9] -> accept single char in range 0-9
+    [] is for single char
+    [0-9]+
+    accept single char in range 0-9 repeated one or more times(see the list above)
+
+    [AEIOU] -> one or more uppercase vowels
+
+    text = "From: lorem ipsum: spme more text"
+    y = re.findall('^F.+:',text)
+    print(y)
+    ['From: lorem ipsum:']
+
+    Why not ['From:']
+
+    greedy prefers the larger string always
+
+    Non Greedy matching: ^F.+?:
+
+
+    Suppose we have :
+    From louis@media.berkeley.edu Thu Jan  3 17:18:23 2008
+
+    we want: louis@media.berkeley.edu
+
+    logic: find @ then go outward until u find ' '
+    \S+@\S+
+    so find @ sign and push outward until u find blank
+
+
+    We can fine tune this further:
+
+    ^From (\S+@\S+)
+
+
+    so we match lines starting with From. Then a blank. Then one or more non blank chars. Then @. Then one
+    or more non blank chars
+
+    () signify which stuff to return back
+    So even though the reg expr matches lines starting with From and... it only returns part within ()
+
+    ie it only returns ['louis@media.berkeley.edu']
+
+
+    now we only wanna get domain
+
+    @([^ ]*)
+
+    start.. get @.. then start extracting and check for any no of non blank chars..
+
+    [^ ] -> match a non blank char
+    [^ ]* ->match many non blank chars
+
+    From .*@([^ ]*)
+
+    start with From then blank then any no of chars then @ then start extracting
+
+    We want to match lines of form:
+
+    X-DSPAM-Confidence: 0.6959
+
+
+    ^X-DSPAM-Confidence: ([0-9.]+)
+
+    This is reg expr
+    It searches lines starting with ^X-DSPAM-Confidence:
+    Then starts extracting
+    it matches one or more characters consisting of digits or .
+    Basically it returns 0.6959 stuff
+
+    Full code:
+
+    import re
+
+    fname = 'mbox-short.txt'
+
+    fh = open(fname)
+    numlist = list()
+    for line in fh:
+        line = line.rstrip()
+        stuff = re.findall('^X-DSPAM-Confidence: ([0-9.]+)', line)
+        if (len(stuff) > 0):
+            num = float(stuff[0])
+            numlist.append(num)
+
+
+    print(max(numlist))
+    fh.close()
+
+    0.9907
+
+
+    if u wanna match something like $10.00
+
+    \$[0-9.]+
+
+    \ signifies $ is not a wild card here but part of string
+
+
+
+
+
+
+
+
+
 
 
 
