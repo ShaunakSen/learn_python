@@ -346,6 +346,132 @@ DICTIONARIES
     money 100
 
 
+TUPLES
+
+    They are non changeable lists
+
+    x = (1, 2, 3, 4)
+    print(sum(x))
+    10
+
+
+    x[2] =6
+    ERROR
+
+    sort() append() reverse() DO NOT WORK with tuples
+
+    as we cant change it ...
+
+
+    we can only do count and index
+
+    Tuples are more efficient.. they are faster and use less memory
+
+    We can use them while making temp vars which we dont change
+
+    a, b = (11, 12)
+    print(a)
+
+    mini = dict()
+    mini['clothes'] = 100
+    mini['chocolates'] = 200
+    print(mini.items())
+
+    dict_items([('clothes', 100), ('chocolates', 200)])
+
+    We get back a list
+    Each item in a list is a tuple of key, value
+
+    mini = dict()
+    mini['clothes'] = 100
+    mini['chocolates'] = 200
+    print(mini.items())
+
+    for key, value in mini.items():
+        print("Mini has", value, key)
+
+    Mini has 100 clothes
+    Mini has 200 chocolates
+
+    Tuples are comparable
+    print((0, 1, 2) < (0, 2, 5))
+    True
+
+    it compares one by one
+    0 with 0 same so next
+    1 with 2 -> true
+
+    Sort by keys
+
+    aDict = {'c':2, 'b':1, 'e':23,'a': 4}
+    aList = aDict.items()
+    print(sorted(aList))
+
+    [('a', 4), ('b', 1), ('c', 2), ('e', 23)]\
+
+    Sort by values(Descending Order)
+
+    tempList = list()
+
+    for k, v in sorted(aDict.items()):
+        tempList.append((v, k))
+
+    print(tempList)
+
+    tempList.sort(reverse=True)
+    print(tempList)
+
+    [(23, 'e'), (4, 'a'), (2, 'c'), (1, 'b')]
+
+
+    Most common words in a file
+
+    fname = 'romeo.txt'
+    fh = open(fname)
+    wordsDict = dict()
+    wordsList = list()
+    for line in fh:
+        line = line.rstrip()
+        words = line.split()
+        for word in words:
+            wordsDict[word] = wordsDict.get(word, 0) + 1
+
+    print(wordsDict)
+
+    for k, v in wordsDict.items():
+        wordsList.append((v, k))
+
+    wordsList.sort(reverse=True)
+
+    print(wordsList)
+    fh.close()
+
+    [(3, 'the'), (3, 'is'), (3, 'and'), (2, 'sun'), (1, 'yonder'), (1, 'with'), (1, 'window'),
+    (1, 'what'), (1, 'through'), (1, 'soft'), (1, 'sick'), (1, 'pale'), (1, 'moon'), (1, 'light'),
+    (1, 'kill'), (1, 'grief'), (1, 'fair'), (1, 'envious'), (1, 'east'), (1, 'breaks'), (1, 'already'),
+    (1, 'Who'), (1, 'Juliet'), (1, 'It'), (1, 'But'), (1, 'Arise')]
+
+    Note wordsList.sort(reverse=True) sorts based on key and then value
+
+
+    List Comprehension
+
+    print([ (v, k) for k, v in wordsDict.items() ])
+
+    The outermost [  ] is a list comprehension
+    It says construct dynamically a list of tuples (v, k)
+    and (v, k) will be assigned according to: k, v in wordsDict.items()
+
+
+    Now as we have list of tuples in val, key order we can sort them to get which word occurred most
+    no of times
+
+
+
+
+
+
+
 
 
 
