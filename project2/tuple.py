@@ -51,4 +51,7 @@ print(wordsList[:])
 
 print([(v, k) for k, v in wordsDict.items()])
 
+m, n = 1, 2
+print(n)
+
 fh.close()
